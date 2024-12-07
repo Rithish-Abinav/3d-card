@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <style>
+          @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Lexend Deca", serif;
+    user-select: none;
+
+}
+body{
+    background: linear-gradient(to top,black,rgba(0, 0, 0, 0.8));
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+svg{
+    width: 70px;
+    fill: white;
+}
+.card_container{
+    perspective: 1000px;
+}
+.card{
+    display: flex;
+            flex-direction: column;
+            width: 350px;
+       transform-style: preserve-3d;
+        position: relative;
+        height: 364px;
+        transform: translateZ(-30px);
+        transform-origin: 50% 50%;
+      transition: 1s all;
+}
+.card.top{
+    transform: rotateX(-90deg) translateZ(0px);
+}
+.card.bottom{
+    transform: rotateX(90deg) translateZ(0px);
+}
+.card.left{
+    transform: rotateY(90deg) translateZ(0px);
+}
+.card.right{
+    transform: rotateY(-90deg) translateZ(0px);
+}
+.card.back{
+    transform: rotateY(180deg) translateZ(0px);
+}
+
+
+.card_front{
+    display: flex;
+    flex-direction: column;
+}
+
+.card_front .head{
+    background: #008bc2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 30px;
+            gap: 10px;
+            color: white;
+            /* opacity: 0; */
+}
+.card_front .body{
+    color: black;
+            padding: 30px 15px;
+            background: white;
+            text-align: justify;
+            font-size: 14px;
+            line-height: 24px;
+            font-weight: 400;
+}
+.card_face{
+    position: absolute;
+    width: 100%;
+transition: 1s all;
+box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05) inset;
+}
+
+.card_back{
+    height: 364px;
+    width: 100%;
+    transform: translateZ(-30px);
+    background: linear-gradient(to bottom, #008bc2 44%, rgb(201, 201, 201) 40%);
+}
+.card_top,.card_bottom{
+    height: 30px;
+    width: 100%;
+  
+}
+.card_bottom{
+    background:rgb(126, 126, 126);
+    transform: rotateX(-90deg) translateZ(30px);
+    bottom: 0;
+    transform-origin: top center;
+}
+.card_top{
+    background: #00587a;
+    transform: rotateX(-90deg) translateZ(0px);
+    top: 0;
+    transform-origin: top center;
+}
+.card_right,.card_left{
+    width: 30px;
+    height: 100%;
+    background: linear-gradient(to bottom, #00587a 44%, rgb(126, 126, 126) 40%);
+}
+.card_right{
+    background-color: red;
+    right: 0;
+    z-index: 999;
+    transform-origin: top right;
+    transform: rotateY(90deg) translateX(30px);
+}
+.card_left{
+    background-color: red;
+    left: 0;
+    z-index: 999;
+    transform-origin: top left;
+    transform: rotateY(90deg) translateX(0px);
+}
+
+section{
+    margin-top: 100px;
+    display: flex;
+    gap: 20px;
+}
+
+section span{
+    background-color: #008bc2;
+    padding: 7px 15px;
+    border-radius: 50px;
+}
+
+@media screen and (max-width:767px) {
+    section{
+        flex-wrap: wrap;
+        margin-top: 0px;
+        justify-content: center;
+    }
+}
+
+    </style>
+
+
+
+
+<div class="container">
+
+    <div class="card_container">
+<div class="card" >
+    <div class="card_face card_top"></div>
+    <div class="card_face card_bottom"></div>
+    <div class="card_face card_left"></div>
+    <div class="card_face card_right"></div>
+    <div class="card_face card_back"></div>
+    <div class="card_face card_front">
+    <div class="head">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M5 4.9967V7.9967H19V4.9967H5ZM4 2.9967H20C20.5523 2.9967 21 3.44442 21 3.9967V8.9967C21 9.54899 20.5523 9.9967 20 9.9967H4C3.44772 9.9967 3 9.54899 3 8.9967V3.9967C3 3.44442 3.44772 2.9967 4 2.9967ZM6 11.9967H12C12.5523 11.9967 13 12.4444 13 12.9967V15.9967H14V21.9967H10V15.9967H11V13.9967H5C4.44772 13.9967 4 13.549 4 12.9967V10.9967H6V11.9967ZM17.7322 13.7289L19.5 11.9612L21.2678 13.7289C22.2441 14.7052 22.2441 16.2882 21.2678 17.2645C20.2915 18.2408 18.7085 18.2408 17.7322 17.2645C16.7559 16.2882 16.7559 14.7052 17.7322 13.7289Z"></path></svg>
+        <p>Design</p>
+    </div>
+    <div class="body">
+Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem, incidunt pariatur dignissimos officia et officiis dolorum in optio inventore blanditiis atque placeat obcaecati nihil molestiae dolores quaerat quidem cupiditate praesentium!
+
+</div>
+</div>
+<div class="card_face card_back"></div>
+</div>
+
+</div>
+
+
+</div>
+
+
+<section>
+    <span>
+        <input type="radio" id="left" name="direction">
+        <label for="left">Left</label>
+    </span>
+
+    <span>
+        <input type="radio" id="right" name="direction">
+        <label for="right">Right</label>
+    </span>
+
+    <span>
+        <input type="radio" id="top" name="direction">
+        <label for="top">Top</label>
+    </span>
+
+    <span>
+        <input type="radio" id="bottom" name="direction">
+        <label for="bottom">Bottom</label>
+    </span>
+
+    <span>
+        <input type="radio" id="back" name="direction">
+        <label for="back">Back</label>
+    </span>
+
+    <span>
+        <input type="radio" id="front" name="direction">
+        <label for="front">Front</label>
+    </span>
+</section>
+
+<script>
+    let radio = document.querySelectorAll('input[type=radio]');
+    let cube = document.querySelector('.card');
+    
+    radio.forEach((btn) => {
+        btn.addEventListener('change', (event) => {
+            console.log(`Selected: ${event.target.id}`);
+            cube.className = 'card'; 
+            cube.classList.add(event.target.id);
+        });
+    });
+    
+ 
+    let isDragging = false;
+    let startX, startY, rotateX = 0, rotateY = 0;
+    
+    const cardContainer = document.querySelector('.card_container');
+    
+    cardContainer.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        cardContainer.style.cursor = 'grabbing';
+        startX = e.clientX;
+        startY = e.clientY;
+    });
+    
+    window.addEventListener('mouseup', () => {
+        isDragging = false;
+        cardContainer.style.cursor = 'grab';
+    });
+    
+    window.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+    
+        let deltaX = e.clientX - startX;
+        let deltaY = e.clientY - startY;
+    
+        startX = e.clientX;
+        startY = e.clientY;
+    
+        rotateX -= deltaY * 0.5; 
+        rotateY += deltaX * 0.5; 
+    
+        cube.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    });
+    </script>
+    
+</body>
+</html>
